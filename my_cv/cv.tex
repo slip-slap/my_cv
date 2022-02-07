@@ -1,0 +1,162 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, a4paper]{awesome-cv}
+
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+\colorlet{awesome}{awesome-red}
+% Uncomment if you would like to specify your own color
+% \definecolor{awesome}{HTML}{CA63A8}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{false}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+% Define an environment for cvpub
+\newenvironment{cvpubs}{%
+  \vspace{\acvSectionContentTopSkip}
+    \vspace{-2mm}
+    \paragraphstyle
+}{%
+    \par
+    \vspace{1mm}
+}
+
+% Define a line of cvpub
+% Usage: \cvpub{<ciation>}
+\newcommand*{\cvpub}[1]{%
+	\leftskip 0.7cm
+    \parindent -0.7cm
+    \pubstyle{#1}
+}
+
+\newcommand{\field}[1]{\textbf{#1}}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{xeCJK}
+\usepackage{xstring}
+\newcommand{\COMPILEMODE}{CHINESE}
+%{Songti SC}
+\setCJKmainfont[Path=/System/Library/Fonts/Supplemental/]{Songti.ttc}
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+% \photo{./examples/profile.png}
+\name{简历}{}
+%\position{Software Architect{\enskip\cdotp\enskip}Security Expert}
+%\address{42-8, Bangbae-ro 15-gil, Seocho-gu, Seoul, 00681, Rep. of KOREA}
+
+%\mobile{(+82) 10-9030-1843}
+%\email{posquit0.bj@gmail.com}
+%\dateofbirth{January 1st, 1970}
+%\homepage{www.posquit0.com}
+%\github{posquit0}
+%\linkedin{posquit0}
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \twitter{@twit}
+% \skype{skype-id}
+% \reddit{reddit-id}
+% \medium{medium-id}
+% \kaggle{kaggle-id}
+% \googlescholar{googlescholar-id}{name-to-display}
+%% \firstname and \lastname will be used
+% \googlescholar{googlescholar-id}{}
+% \extrainfo{extra information}
+
+%\quote{``Be the change that you want to see in the world."}
+
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% Print the header with above personal information
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\makecvfooter
+  {\today}
+  {张辉耀~~~·~~~简历}
+  {\thepage}
+
+\cvsection{基本情况}
+
+\begin{minipage}{0.2\textwidth}
+	\includegraphics[scale=1.1]{8574.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.8\textwidth}
+	\renewcommand{\arraystretch}{2.2}
+	\begin{adjustbox}{width=1\linewidth}
+		\begin{tabular}{lcr}
+			姓名： 张辉耀 & 性别：男 & 出生年月：1991.01.10 \\
+			学历学位：博士研究生 & 政治面貌: 党员 & 婚否：未婚 \\
+			邮箱： zhanghuiyao2357@163.com & 联系电话：152-1679-7320 &
+			户口所在地：河南驻马店 \\
+			个人网站：\url{https://slip-slap.github.io/} & &\\
+		\end{tabular}
+	\renewcommand{\arraystretch}{0.5}
+	\end{adjustbox}
+\end{minipage}
+
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to modify content
+%-------------------------------------------------------------------------------
+\IfStrEq{\COMPILEMODE}{CHINESE}{
+	\input{cv/summary.tex}
+	\input{cv/education.tex}
+	\input{cv/research.tex}
+	\input{cv/publications.tex}
+	\input{cv/presentation.tex}
+	\input{cv/skills.tex}
+	\input{cv/honors.tex}
+}
+
+\IfStrEq{\COMPILEMODE}{ENGLISH}{
+	\input{cv/skills.tex}
+	\input{cv/honors.tex}
+}
+
+
+%-------------------------------------------------------------------------------
+\end{document}
