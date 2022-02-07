@@ -69,7 +69,9 @@
 \usepackage{adjustbox}
 \usepackage{xeCJK}
 \usepackage{xstring}
-\newcommand{\COMPILEMODE}{CHINESE}
+% CHINESE_COMPANY CHINESE_UNIVERSITY ENGLISH 
+%\newcommand{\COMPILEMODE}{ENGLISH}
+\newcommand{\COMPILEMODE}{CHINESE_UNIVERSITY}
 %{Songti SC}
 \setCJKmainfont[Path=/System/Library/Fonts/Supplemental/]{Songti.ttc}
 
@@ -79,7 +81,12 @@
 %-------------------------------------------------------------------------------
 % Available options: circle|rectangle,edge/noedge,left/right
 % \photo{./examples/profile.png}
-\name{简历}{}
+\IfStrEq{\COMPILEMODE}{ENGLISH}{
+	\name{RESUME}{}
+}{
+	\name{简历}{}
+}
+
 %\position{Software Architect{\enskip\cdotp\enskip}Security Expert}
 %\address{42-8, Bangbae-ro 15-gil, Seocho-gu, Seoul, 00681, Rep. of KOREA}
 
@@ -113,48 +120,55 @@
 
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
-\makecvfooter
-  {\today}
-  {张辉耀~~~·~~~简历}
-  {\thepage}
 
-\cvsection{基本情况}
-
-\begin{minipage}{0.2\textwidth}
-	\includegraphics[scale=1.1]{8574.png}
-\end{minipage}
-\hfill
-\begin{minipage}{0.8\textwidth}
-	\renewcommand{\arraystretch}{2.2}
-	\begin{adjustbox}{width=1\linewidth}
-		\begin{tabular}{lcr}
-			姓名： 张辉耀 & 性别：男 & 出生年月：1991.01.10 \\
-			学历学位：博士研究生 & 政治面貌: 党员 & 婚否：未婚 \\
-			邮箱： zhanghuiyao2357@163.com & 联系电话：152-1679-7320 &
-			户口所在地：河南驻马店 \\
-			个人网站：\url{https://slip-slap.github.io/} & &\\
-		\end{tabular}
-	\renewcommand{\arraystretch}{0.5}
-	\end{adjustbox}
-\end{minipage}
 
 %-------------------------------------------------------------------------------
 %	CV/RESUME CONTENT
 %	Each section is imported separately, open each file in turn to modify content
 %-------------------------------------------------------------------------------
-\IfStrEq{\COMPILEMODE}{CHINESE}{
-	\input{cv/summary.tex}
-	\input{cv/education.tex}
-	\input{cv/research.tex}
-	\input{cv/publications.tex}
-	\input{cv/presentation.tex}
-	\input{cv/skills.tex}
-	\input{cv/honors.tex}
+\IfStrEq{\COMPILEMODE}{CHINESE_UNIVERSITY}{
+	\input{cv/basic.tex}
+	\makecvfooter
+	  {\today}
+	  {张辉耀~~~·~~~简历}
+	  {\thepage}
+	\input{cv_company/summary.tex}
+	\input{cv_company/education.tex}
+	\input{cv_company/research.tex}
+	\input{cv_company/publications.tex}
+	\input{cv_company/presentation.tex}
+	\input{cv_company/skills.tex}
+	\input{cv_company/honors.tex}
+}
+
+\IfStrEq{\COMPILEMODE}{CHINESE_UNIVERSITY}{
+	\input{cv/basic.tex}
+	\makecvfooter
+	  {\today}
+	  {张辉耀~~~·~~~简历}
+	  {\thepage}
+	\input{cv_university/summary.tex}
+	\input{cv_university/education.tex}
+	\input{cv_university/research.tex}
+	\input{cv_university/publications.tex}
+	\input{cv_university/presentation.tex}
+	\input{cv_university/skills.tex}
+	\input{cv_university/honors.tex}
 }
 
 \IfStrEq{\COMPILEMODE}{ENGLISH}{
-	\input{cv/skills.tex}
-	\input{cv/honors.tex}
+	\input{cv_english/basic.tex}
+	\makecvfooter
+	  {\today}
+	  {HUIYAO ZHANG~~~·~~~CURRiCULUM ViTAE }
+	  {\thepage}
+	\input{cv_english/summary.tex}
+	\input{cv_english/education.tex}
+	%\input{cv_english/research.tex}
+	\input{cv_english/publications.tex}
+	\input{cv_english/presentation.tex}
+	\input{cv_english/skills.tex}
+	\input{cv_english/honors.tex}
 }
 
 
