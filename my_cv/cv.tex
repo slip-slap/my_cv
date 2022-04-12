@@ -58,11 +58,6 @@
 
 % Define a line of cvpub
 % Usage: \cvpub{<ciation>}
-\newcommand*{\cvpub}[1]{%
-	\leftskip 0.7cm
-    \parindent -0.7cm
-    \pubstyle{#1}
-}
 
 \newcommand{\field}[1]{\textbf{#1}}
 \usepackage{graphicx}
@@ -71,6 +66,7 @@
 \usepackage{xstring}
 % CHINESE_COMPANY CHINESE_UNIVERSITY ENGLISH 
 %\newcommand{\COMPILEMODE}{ENGLISH}
+%\newcommand{\COMPILEMODE}{CHINESE_COMPANY}
 \newcommand{\COMPILEMODE}{CHINESE_UNIVERSITY}
 %{Songti SC}
 \setCJKmainfont[Path=/System/Library/Fonts/Supplemental/]{Songti.ttc}
@@ -126,8 +122,8 @@
 %	CV/RESUME CONTENT
 %	Each section is imported separately, open each file in turn to modify content
 %-------------------------------------------------------------------------------
-\IfStrEq{\COMPILEMODE}{CHINESE_UNIVERSITY}{
-	\input{cv/basic.tex}
+\IfStrEq{\COMPILEMODE}{CHINESE_COMPANY}{
+	\input{cv_company/basic.tex}
 	\makecvfooter
 	  {\today}
 	  {张辉耀~~~·~~~简历}
@@ -142,7 +138,7 @@
 }
 
 \IfStrEq{\COMPILEMODE}{CHINESE_UNIVERSITY}{
-	\input{cv/basic.tex}
+	\input{cv_university/basic.tex}
 	\makecvfooter
 	  {\today}
 	  {张辉耀~~~·~~~简历}
@@ -164,7 +160,7 @@
 	  {\thepage}
 	\input{cv_english/summary.tex}
 	\input{cv_english/education.tex}
-	%\input{cv_english/research.tex}
+	\input{cv_english/research.tex}
 	\input{cv_english/publications.tex}
 	\input{cv_english/presentation.tex}
 	\input{cv_english/skills.tex}

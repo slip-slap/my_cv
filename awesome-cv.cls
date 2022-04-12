@@ -53,6 +53,7 @@
 % Needed to handle text alignment
 \RequirePackage{ragged2e}
 % Needed to configure page layout
+%\RequirePackage[showframe]{geometry}
 \RequirePackage{geometry}
 % Needed to make header & footer effeciently
 \RequirePackage{fancyhdr}
@@ -664,7 +665,7 @@
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
     \ifempty{#2#3}
       {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+      {\entrytitlestyle{#2} & \entrydatestyle{#3} \\
       \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
   \end{tabular*}%
