@@ -1,0 +1,22 @@
+\begin{figure}
+\centering
+\resizebox{.95\linewidth}{!}{
+		\begin{tikzpicture}
+		\tikzstyle{rec} = [rectangle, minimum width=0.8cm,minimum height=0.6cm, text
+		centered, draw=black]
+			\node (gene11) [rec] {0};
+			\node (gene2) [rec] at ($(gene11.east)+(0.4cm,0)$)  {0};
+			\node (gene3) [rec] at ($(gene2.east)+(0.4cm,0)$)  {0};
+			\node (gene4) [rec] at ($(gene3.east)+(0.4cm,0)$)  {1};
+			\node (gene5) [rec] at ($(gene4.east)+(0.4cm,0)$)  {1};
+			\node (gene6) [rec] at ($(gene5.east)+(0.4cm,0)$)  {0};
+			\node (gene7) [rec] at ($(gene6.east)+(0.4cm,0)$)  {0};
+			\node (gene8) [rec] at ($(gene7.east)+(0.4cm,0)$)  {1};
+			\node (gene9) [rec] at ($(gene8.east)+(0.4cm,0)$)  {1};
+			\node (last) [rec] at ($(gene9.east)+(0.4cm,0)$)  {0};
+			\node[text width=1cm] at ($(gene11.west)+(-0.3cm,0)$) {$P_1$:};
+		\end{tikzpicture}
+}
+\caption{An individual's chromosome represented by binary string.}
+\label{fig:chapter3-chromosome}
+\end{figure}
