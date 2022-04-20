@@ -122,8 +122,8 @@ a laminate.
 thickness of the layer, the fiber orientation, and engineering properites of the
 material. The properitis of a laminate is determined by the combination of these
 layers.  
-对于每一层的复合材料来说，它的强度是由材料的铺层角，材料的性质和材料的厚度决定。
-对于整个层合板来说，它的强度取决于材料的组合方式
+图三是层合材料的结构图
+对于层合材料来说，它的强度是由材料的铺层角，材料的性质和材料的厚度决定。
 
 A question arises from this is how to determine the strength of a laminate.
 }
@@ -145,8 +145,10 @@ material to satisfy engineering requirements. such as the weight and cost.
 thickness, the number of layers, the ply oritentation. And all these variables
 are discrete in practice.  So in nature the design of laminated composite
 material is a constrained optimization with discrete variables.
-在生产实际中，为了满足工程强度，生产成本的需要，往往需要对层合材料进行设计。
-层合材料的强度取决于层合板的层数，铺层角，层合材料等。这些决定层合板强度的变量
+
+在生产中，使用的层合材料除了需要满足工程强度的要求以外，还需要对生产成本和材料本身的
+质量要求。
+层合材料的强度取决于层合板的层数，铺层角，层合材料等。以上这些决定层合板强度的变量
 都是离散的，因此层合材料的设计是一个受约束的离散变量的优化问题。
 }
 
@@ -170,13 +172,15 @@ material is a constrained optimization with discrete variables.
 \end{frame}
 
 \note{
-离散变量的优化问题可以使用遗传算法进行解决，因为其不需要变量是连续的。
+对于离散变量的优化问题可以使用遗传算法进行解决，因为其不需要变量是连续的。
 使用经典的遗传算法流程如下：
 1. 构造目标函数
 2. 为满足约束条件，添加惩罚项到目标函数
 3. 重新构造目标函数
-但是遗传算法是为了无约束的目标优化提出来的，对目标函数的重新构造会降低遗传算法的
-性能, 而且搜寻的结果受重新构造目标函数系数的影响。
+但是这种做法会有两个问题：
+但是遗传算法是为了无约束的目标优化提出来的，对目标函数的重新构造会影响遗传算法的
+性能,
+而且每次模拟只能得到一个结果，并且这个结果跟重新构造目标函数系数的系数有关。
 
 	One of the most natural way to solve this problem is to adopt genetic
 algorithm, because it doesn't require the variable to be continuous. 
@@ -205,9 +209,8 @@ The drawback of this method is that genetic algorithm is proposed for unconstrai
 	\end{columns}
 \end{frame}
 
-\note{The general flowchart of the proposed genetic algorithm is as shown in
-	Fig4. 
-	Compared with the classical GA, there are two differences:
+\note{
+	为了解决以上这两个问题，对传统的遗传算法进行改进。
 	
 	1. first, classify the population into three different groups according to the
 	constraints, active group, potential group and proper group. we will explain
@@ -216,6 +219,7 @@ The drawback of this method is that genetic algorithm is proposed for unconstrai
 	group is different. For the active group, the mutation follows the
 	traditional pattern; we will adopt new mutation technique for the potential
 	and proper group.
+	基于这两个techique,我们可以在不重新构造目标函数的前提下，完成受约束离散变量的优化
  }
 
 \begin{frame}{定义}
@@ -232,14 +236,17 @@ The drawback of this method is that genetic algorithm is proposed for unconstrai
 		\end{itemize}
 \end{frame}
 
-\note{Here are some definition and terminology:
+\note{
+	这是我们提出的改进遗传算法中的一些定义。
+
+	Here are some definition and terminology:
 The role of different group is different. The role of active group is to
 maintain the diversity of the mating pool. The role of potential group is to
 find possible solutions. In the proper group, they are  the individual that we want.}
 
 
 
-\begin{frame}{研究方法}
+\begin{frame}{自适应变异算子}
     \begin{columns}[c]
     \begin{column}{1\textwidth}
 		$\text{md} = [CT_1, \cdots, CT_{n-1}, CT_n] -  [ICV_1, \cdots, ICV_{n-1},
@@ -254,7 +261,11 @@ find possible solutions. In the proper group, they are  the individual that we w
 \end{columns}
 \end{frame}
 
-\note{The second technique in the proposed genetic algorithm is self-adaptive mutation
+\note{
+	第二个technique是自适应变异算子，它的意思就是个体能够根据自身的约束值
+	和约束条件的关系调整演化的方向和速度。
+	在这个公式里，
+	The second technique in the proposed genetic algorithm is self-adaptive mutation
 	operator, which means it can adjust the mutation according to the
 	constraint value.  In this formula, the CTn represents threshold, ICVn
 	denotes the corresponding individual's constraint value.  We get a mutation
@@ -262,7 +273,7 @@ find possible solutions. In the proper group, they are  the individual that we w
 chromosome.}
 
 
-\begin{frame}{研究方法}
+\begin{frame}{自适应变异算子}
     \begin{columns}[c]
 	\begin{column}{1\textwidth}
 		\begin{itemize}
@@ -322,15 +333,15 @@ objective function.}
 \begin{frame}{研究成果} 
 	%\input{fig/chapter4_first_table_comparsion.tex}
 	\input{fig/part1/part1/table/comparsion.tex}
-
 \end{frame}
 \note{
-	在这里展现的是我们一部分的实验结果，从这里可以看出使用改进的遗传算法可以获得
-	更好的实验结果，
+	在这里展现的是我们一部分的实验成果，从这里可以看出使用改进的遗传算法可以获得
+	实验结果是更好的。
 }
 
 
-\note{We have three conclusions from this chapter:
+\note{
+	We have three conclusions from this chapter:
 	The first is that the proposed genetic algorithm can be used to guide the
 	design of laminated structure with one or multiple constraints without
 	modifying the objective function.
@@ -384,10 +395,11 @@ objective function.}
 \end{frame}
 
 \note{
+	我博士期间研究的第二个问题呢
     我们可以使用这个幻灯片中的公式来计算层合材料的强度，这些公式有一个名字叫做，
 	经典的层合理论和纤维失效理论，它是使用解析的方法，根据经典的力学模型计算应力和应变来预测材料的强度。
 	这种方法存在的一个问题是，她的步骤比较繁琐，而且这个算法的时间复杂度比较高，因为包含了
-	大量的矩阵乘法和积分的运算。因此,我推荐使用数据驱动的方法，也就是神经网络来预测
+	大量的矩阵乘法和积分的运算。因此,我尝试使用使用数据驱动的方法，也就是神经网络来预测
 	复合材料的强度。
 
 Another problems arises from a laminate is the the strength prediction.
@@ -405,6 +417,8 @@ Another problems arises from a laminate is the the strength prediction.
 \end{frame}
 
 \note{
+	那么需要什么样结构的网络来预测复合材料的强度呢？我们推荐了一下的拓扑结构。该网络有以下
+	几个特点
 	1. 研究设计了一个三层的神经网络，因为三层是非线性的，
   	   可以用来近似任意的连续函数。 而经典的层合理论和材料失效理论本质上是一个连续函数。
 	2. 研究认为每一个隐藏层的神经元可以看作是从输入层学习到的特征质，
@@ -424,11 +438,16 @@ Another problems arises from a laminate is the the strength prediction.
 \begin{frame}{研究方法 }
 	\begin{figure}
 		\includegraphics[width=0.9\textwidth]{fig/a0_figure_ann_for_clt_architecture.png}
-		\caption{General neural network for prediction the strength of an angle ply laminate.}
+		\caption{用于层合材料强度预测的神经网络}
 	\end{figure}
 \end{frame}
 
-\note{To calculate the Based on the general neural network architecture, we proposed the
+\note{
+	根据上面的模型我们设计了以下的神经网络来预测层合材料的强度，
+	该网络具有十六个输入参数：这16个参数是我们提取到的与层合材料结构有关的参数。
+	两个输出，是不同的强度指标。
+
+	To calculate the Based on the general neural network architecture, we proposed the
 	following structure to predict the strength of angle ply structure. There
 	are two outputs, which are tsai wu strength ratio, and maximum strength
 	ratio.
@@ -452,7 +471,7 @@ Longitudinal elastic modulus
 \begin{frame}{研究方法 }
 	\begin{figure}
 		\input{fig/part3/fig/experiment_architecture_example1_code.tex}
-		\caption{Example of proposed architecture.}
+		\caption{材料预测模型}
 		\label{fig:example}
 	\end{figure}
 	\input{fig/part3/fig/experiment_architecture_example1_table-one-example.tex}
@@ -510,7 +529,8 @@ normalize the training data for the learning of the neural network.}
 \note{
  为了验证所推荐的网络结构和全连接神经网络在材料性能预测的差异，我们同时训练了一个全连接的
  神经网络。通过观察实验结果可以发现，演化神经网络在training error和validation
- error两个指标上都比全连接神经网络有更好的数据表现。并发表有一篇学术论文。 
+ error两个指标上都比全连接神经网络有更好的数据表现。并把我们的研究成果发表在计算机类
+ 的期刊上。。 
 
 We also trained a neural network which has the same architecture as the neural
 network that we obtained from genetic algorithm. The only difference is that
