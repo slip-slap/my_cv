@@ -10,51 +10,54 @@
 			text centered, draw=black]
 			\tikzstyle{decision} = [diamond,minimum width=2.4cm, minimum height=1.4cm, draw=black]
 			% population
-			\node (evaluate) [rec] {Evaluate all individuals};
-			\node (decision) at ($(evaluate.south)+(-0cm, -1.5cm)$)   [decision] {} node at (decision.base) {Is converge?};
-			\node at  ($(decision.south)+(0.3cm, -0.4cm)$) {No};
-			\node at  ($(decision.west)+(-0.9cm, 0.2cm)$) {Yes};
-			\node (population) at ($(decision.south)+(-0cm, -1.3cm)$) [rec] {population};
-			\node (end) at ($(population.west)+(-0.9cm, 0cm)$) [startstop] {End};
+			\node (evaluate) [rec] {计算适应度};
+			\node (decision) at ($(evaluate.south)+(-0cm, -1.5cm)$)   [decision]
+			{} node at (decision.base) {是否收敛?};
+			\node at  ($(decision.south)+(0.3cm, -0.4cm)$) {否};
+			\node at  ($(decision.west)+(-0.9cm, 0.2cm)$) {是};
+			\node (population) at ($(decision.south)+(-0cm, -1.3cm)$) [rec]
+			{种群};
+			\node (end) at ($(population.west)+(-0.9cm, 0cm)$) [startstop] {结束};
 			% active group
 			\node (active_group_1) at ($(population.south)+(-3cm, -2.0cm)$) [subgroup]
-				{active group};
+				{活跃子群};
 			\node (active_group_2) at ($(active_group_1.south)+(0cm, -1.5cm)$)
-				[subgroup] {active parents};
+				[subgroup] {活跃子群};
 			\draw[->] (decision.west) -| (end.north);
 			\draw[->] (population.south) -- (active_group_1.north);
 			\draw[->] (active_group_1.south) -- (active_group_2.north);
 			% potential group
 			\node (potential_group_1) at ($(population.south)+(0cm, -2.0cm)$) [subgroup]
-				{potential group};
+				{潜在子群};
 			\node (potential_group_2) at ($(potential_group_1.south)+(0cm, -1.5cm)$)
-				[subgroup] {potential parents};
+				[subgroup] {潜在子群};
 			\draw[->] (evaluate.south) -- (decision.north);
 			\draw[->] (decision.south) -- (population.north);
 			\draw[->] (population.south) -- (potential_group_1.north);
 			\draw[->] (potential_group_1.south) -- (potential_group_2.north);
-			\node at ($(potential_group_1.north)+(0cm, 1.0cm)$) {classification };
-			\node at ($(potential_group_2.north)+(0cm, 1.0cm)$) {selection};
+			\node at ($(potential_group_1.north)+(0cm, 1.0cm)$) {分类};
+			\node at ($(potential_group_2.north)+(0cm, 1.0cm)$) {选择};
 			% proper group
 			\node (proper_group_1) at ($(population.south)+(3cm, -2.0cm)$) [subgroup]
-				{proper group};
+				{合适子群};
 			\node (proper_group_2) at ($(proper_group_1.south)+(0cm, -1.5cm)$)[subgroup]
-				{proper parents};
+				{合适子群};
 			\draw[->] (population.south) -- (proper_group_1.north);
 			\draw[->] (proper_group_1.south) -- (proper_group_2.north);
 			% crossover
-			\node (after_cross_over) at ($(potential_group_2.south)+(0cm, -2.0cm)$) [rec] {offspring};
-			\node  at ($(after_cross_over.north)+(0cm, 1.0cm)$)  {crossover};
+			\node (after_cross_over) at ($(potential_group_2.south)+(0cm,
+			-2.0cm)$) [rec] {后代};
+			\node  at ($(after_cross_over.north)+(0cm, 1.0cm)$)  {交叉};
 			\draw[->] (active_group_2.south) -- (after_cross_over.north);
 			\draw[->] (potential_group_2.south) -- (after_cross_over.north);
 			\draw[->] (proper_group_2.south) -- (after_cross_over.north);
 			% mutation
 			\node (active_group_3) at ($(after_cross_over.south)+(-2.2cm, -1.5cm)$)
-				[subgroup] {active offspring};
+				[subgroup] {活跃子群后代};
 			\node at ($(after_cross_over.south)+(0cm, -1.0cm)$) {mutation};
 			\draw[->] ($(after_cross_over.south)+(-1cm,0cm)$)--(active_group_3.north);
 			\node (poteni_and_prop) at ($(after_cross_over.south)+(2.2cm, -1.5cm)$)
-				[bigsubgroup] {potential and proper offspring};
+				[bigsubgroup] {潜在和合格子群后代};
 			\draw[->] ($(after_cross_over.south)+(1cm,0cm)$)--(poteni_and_prop.north);
 
 			% final draw

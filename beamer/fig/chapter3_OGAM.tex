@@ -5,12 +5,13 @@
     \tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=2cm, minimum height=0.6cm, text centered, draw=black]
     \tikzstyle{process} = [rectangle, minimum width=2cm, minimum height=0.6cm, text centered, draw=black]
     \tikzstyle{decision} = [diamond,minimum width=2cm, minimum height=1.2cm, draw=black]
-    \node (fitness) [process] {Fitness};
-    \node[yshift=-0.5cm] (decision) [decision, below of=fitness] {} node at (decision.base) {Converge};
-    \node[yshift=-0.5cm] (selection) [process, below of=decision] {Selection};
-    \node (crossover) [process] at ($(selection.south)+(0,-0.8cm)$) {Crossover};
-    \node (mutation) [process] at ($(crossover.south)+(0,-0.8cm)$)  {Mutation};
-    \node (end) [startstop] at ($(selection.west)+(-0.8cm,0cm)$) {End};
+    \node (fitness) [process] {适应度};
+    \node[yshift=-0.5cm] (decision) [decision, below of=fitness] {} node at
+	(decision.base) {是否收敛？};
+    \node[yshift=-0.5cm] (selection) [process, below of=decision] {选择};
+    \node (crossover) [process] at ($(selection.south)+(0,-0.8cm)$) {交叉};
+    \node (mutation) [process] at ($(crossover.south)+(0,-0.8cm)$)  {变异};
+    \node (end) [startstop] at ($(selection.west)+(-0.8cm,0cm)$) {停止};
 
     \draw [->] (fitness) -- (decision);
     \draw [->] (decision.south) -- (selection.north) node[auto=left,pos=0.5]{N};
@@ -21,5 +22,5 @@
 		(fitness.east);
 \end{tikzpicture}
 \end{center}
-\caption{GA process\label{GA:old_model}}
+\caption{遗传算法流程图}
 \end{figure}

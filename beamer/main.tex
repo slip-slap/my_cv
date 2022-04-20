@@ -36,8 +36,8 @@
 \begin{frame}
     \titlepage
 \end{frame}
-\note{尊敬的各位老师好，我叫张辉耀，首先感谢有这次面试机会，
-也感谢各位老师在星期天的下午,本该休息的时间，听我的面试汇报,
+\note{尊敬的各位老师好，我叫张辉耀，首先很荣幸能够参加此次面试，
+也感谢各位老师在星期天的下午,这样一个时间，听我汇报,
 下面我就我的教育背景做一个简单的介绍。}
 
 \begin{frame}{教育背景}
@@ -56,9 +56,11 @@
 	\end{itemize}
 \end{frame}
 
-\note{我本科毕业于大连工业大学，研究生就读于上海东华大学纺织学院数字化纺织工程，
+\note{我本科毕业于大连工业大学，研究生就读于上海东华大学纺织学院, 所学的专业是数字化纺织工程，
 在读研期间，接触到计算科学在纺织服装和材料领域的应用，于是对计算科学和数学产生了
-强烈的兴趣。研究生毕业以后，由于当时导师的推荐和国家留学基金委的资助，来到日本京都
+强烈的兴趣。
+我在研究生期间的主要工作是使用椭圆傅立叶和凸包算法解决了一些三维人体建模的问题。
+研究生毕业以后，由于当时导师的推荐和国家留学基金委的资助，来到日本京都
 工艺纤维大学攻读博士，并于上个月取得博士学位。}
 
 \begin{frame}{研究契机}
@@ -66,14 +68,14 @@
 		\begin{column}{0.6\textwidth}
 			\begin{figure}
 				\includegraphics[width=1.0\linewidth]{fig/part0/space-shuttle.png}
-				\caption{复合材料的应用一 (Graphic courtesy of M.C. Gill Corporation,
+				\caption{层合材料的应用一 (Graphic courtesy of M.C. Gill Corporation,
 				http://www.mcgillcorp.com.)}
 			\end{figure}
 		\end{column}
 		\begin{column}{0.4\textwidth}
 			\begin{figure}
 				\includegraphics[width=1.0\linewidth]{fig/part0/laminate_product.png}
-				\caption{ 复合材料的应用二 (Source: https://www.thegillcorp.com)}
+				\caption{层合材料的应用二 (https://www.thegillcorp.com)}
 			\end{figure}
 		\end{column}
 	\end{columns}
@@ -83,7 +85,8 @@
 1. Composite material gains more and more influence in commerical industry
 because of its excellant mechanic performance in stiffness, stength etc., over
 conventional materials.  
-1. 复合材料由于其在强度和刚度等方面优良的性质广泛的应用于社会生活的方方面面。
+1. 层合材料由于其在强度和刚度等方面优良的性质广泛的应用于社会生活的方方面面。
+在这里给出两个例子
 
 2. Here are two examples of the use of them, the first one
 is used in the space shuttle, for the main body of the space shuttle, down the
@@ -98,12 +101,12 @@ mechanical strength, heat resistant, and very low smoke evolution in a smoke.
 和其在燃烧的时候产生 的烟雾颗粒较小。
 }
 
-\begin{frame}{什么是层合板 ? \hfill }
+\begin{frame}{什么是层合材料？}
     \begin{columns}[c]
 		\begin{column}{0.9\textwidth}
 			\begin{figure}
 			\includegraphics[width=0.85\linewidth]{fig/part0/Schematic_of_a_laminate.png}
-			\caption{ Schematic of a laminate. (Source: Autar k. kaw 2006)}
+			\caption{ 层合材料结构图 (来源: Autar k. kaw 2006)}
 			\end{figure}
 		\end{column}
 		%\begin{column}{0.4\textwidth}
@@ -114,196 +117,23 @@ mechanical strength, heat resistant, and very low smoke evolution in a smoke.
 1. A laminate is an assembly of layers of composite materials which can be
 joined to provide required engineering properties.  Figure 1 is the schematic of
 a laminate. 
+层合板是由复合材料粘结而成的能够满足指定工程强度的一种特殊复合材料。
 2. For each layer, its properies is determined by several variables: the
 thickness of the layer, the fiber orientation, and engineering properites of the
 material. The properitis of a laminate is determined by the combination of these
 layers.  
+对于每一层的复合材料来说，它的强度是由材料的铺层角，材料的性质和材料的厚度决定。
+对于整个层合板来说，它的强度取决于材料的组合方式
 
 A question arises from this is how to determine the strength of a laminate.
 }
 
-\begin{frame}{How to Predict the Strength of a Laminate ?\hfill }
-    \begin{columns}[c]
-	\begin{column}{0.6\textwidth}
-		\begin{equation} \label{eq:force_and_moments}
-			\begin{array}{l}
-				\begin{aligned}
-			\begin{bmatrix}
-				N_x \\
-				N_y \\
-				N_{xy}
-			\end{bmatrix}
-			&=
-			\begin{bmatrix}
-				A_{11} & A_{12} & A_{16} \\
-				A_{12} & A_{22} & A_{26} \\
-				A_{16} & A_{26} & A_{66} 
-			\end{bmatrix}
-			\begin{bmatrix}
-				\varepsilon_x^0 \\
-				\varepsilon_y^0 \\
-				\gamma_{xy}^0
-			\end{bmatrix}   \\
-			&+               
-			\begin{bmatrix}
-				B_{11} & B_{12} & B_{16} \\
-				B_{11} & B_{12} & B_{16} \\
-				B_{16} & B_{26} & B_{66} 
-			\end{bmatrix}
-			\begin{bmatrix}
-				k_x \\
-				k_y \\
-				k_{xy} 
-			\end{bmatrix}  \\
-		\end{aligned} \\ \\
-		\begin{aligned}
-			\begin{bmatrix}
-				M_x \\
-				M_y \\
-				M_{xy}
-			\end{bmatrix}
-			&=
-			\begin{bmatrix}
-				B_{11} & B_{12} & B_{16} \\
-				B_{12} & B_{22} & B_{26} \\
-				B_{16} & B_{26} & B_{66} 
-			\end{bmatrix}
-			\begin{bmatrix}
-				\varepsilon_x^0 \\
-				\varepsilon_y^0 \\
-				\gamma_{xy}^0
-			\end{bmatrix} \\ 
-			&+  
-			\begin{bmatrix}
-				D_{11} & D_{12} & D_{16} \\
-				D_{11} & D_{12} & D_{16} \\
-				D_{16} & D_{26} & D_{66} 
-			\end{bmatrix}
-			\begin{bmatrix}
-				k_x \\
-				k_y \\
-				k_{xy} 
-			\end{bmatrix}
-		\end{aligned}
-			\end{array}
-		\end{equation}
-	\end{column}
-	\begin{column}{0.4\textwidth}
-		\begin{equation}
-			\begin{split}
-			&	\resizebox{1.0\linewidth}{!}{$A_{ij}=\sum_{k=1}^{n}(\overline{Q_{ij}})_k(h_k-h_{k-1})  i=1,2,6, j=1,2,6,$}\\
-			&	\resizebox{1.0\linewidth}{!}{$B_{ij}=\frac{1}{2}\sum_{k=1}^{n}(\overline{Q_{ij}})_k(h_k^2 - h_{k-1}^2)
-			i=1,2,6, j=1,2,6,$}\\
-			&   \resizebox{1.0\linewidth}{!}{$D_{ij}=\frac{1}{3}\sum_{k=1}^{n}(\overline{Q_{ij}})_k(h_k^3 - h_{k-1}^3)
-			i=1,2,6, j=1,2,6.$}\\
-			\end{split}
-		\end{equation}
-	\end{column}
-\end{columns}
-\end{frame}
 
-\note{
-	1.  we can use this formula to compute the stress and strain for every layer
-	in a laminate. In this formula, every entry in this matrix is calculate by
-	the the 2, Qij are some constants relates to the composite
-	material, hi and hi-1 denote local coordiate.
-	2. There is another name for this equations which is called classical
-	lamination theory.  which computes the stree and strain in the materail
-	given the load and other conditions.  
-}
-
-\begin{frame}{How to Predict the Strength of a Laminate ?\hfill }
-\begin{columns}[c]
-    \begin{column}{0.4\textwidth}
-		\begin{figure}
-		\centering
-		\resizebox{1.2\linewidth}{!}{
-		\begin{tikzpicture}
-			\begin{scope}
-				%\draw[style=help lines] (-3,-3) grid (3,3);
-				\draw (0,0) rectangle (2,3);
-				\draw[->] (1.3,1.2) -- (2.6,1.2);
-				\draw[->] (1.3,1.2) -- (1.3,3.4);
-				\node at (2.2,1) {$X_T$};
-				\node at (1.5, 3.2) {$Y_T$};
-				\node at (-0.2, 0.9) {$X_C$};
-				\node at (1.8, -0.2) {$Y_C$};
-			\end{scope}
-			\begin{scope}[xshift=6cm,yshift=1.15cm]
-				%\draw[style=help lines] (-3,-3) grid (3,3);
-				\draw[rotate=30] (0,0) ellipse (2cm and 1cm);
-				\draw[->] (0.2,0) -- (0.2,2.2);
-				\draw[->] (0.2,0) -- (1.9,0);
-				\node at (1.6,-0.2) {$X_T$};
-				\node at (0.3, 1.3) {$Y_T$};
-				\node at (-1.6, 0) {$X_C$};
-				\node at (-0.5, -1.5) {$Y_C$};
-			\end{scope}
-		\end{tikzpicture}
-		}
-		\caption{Schematic failure surfaces for maximum stress and quadratic failure
-		criteria}
-		\end{figure}
-    \end{column}
-    \begin{column}{0.6\textwidth}
-		\begin{itemize}
-			\item  Maximum stress failure
-				\begingroup
-				\small
-				\begin{align*}
-					SF_{MS}^k = \text{min of}
-					\begin{cases}
-						SF_X^k = 
-						\begin{cases}
-							\frac{X_t}{\sigma_{11}}, \text{ if } \sigma_{11}>0 \\
-							\frac{X_c}{\sigma_{11}}, \text{ if } \sigma_{11}<0 \\
-						\end{cases} \\
-						SF_Y^k = 
-						\begin{cases}
-							\frac{Y_t}{\sigma_{22}}, \text{ if } \sigma_{22}>0 \\
-							\frac{Y_c}{\sigma_{22}}, \text{ if } \sigma_{22}<0 \\
-						\end{cases} \\
-						SF_S^k =
-						\begin{cases}
-							\frac{S}{|\tau_{12}|} \\
-						\end{cases} \\
-					\end{cases} \textstyle{.}
-				\end{align*}
-				\endgroup
-			\item  Tsai-wu failure theory
-
-		 \begingroup
-		 \small
-		 \begin{equation*} 
-		 \begin{split}
-			H_1 \sigma_1  & + H_2 \sigma_2 + H_6 \tau_{12} + H_{11}\sigma_1^2 + H_{22} \sigma_2^2 \\
-						  & + H_{66}  \tau_{12}^2 + 2H_{12}\sigma_1\sigma_2 < 1
-		 \end{split}
-		\end{equation*}
-		\endgroup
-		\end{itemize}
-    \end{column}
-\end{columns}
-\end{frame}
-
-\note{We can use these formulas to check whether a laminate  
-failure or according to the stress and strain which are calculated from
-above-mentioned classical lamination thoery.
-
-These equations are called failure theory, Here we adopt two different failure theories, one is
-Tsai-wu, and the other is Maximum Stress. The reason is that they have different
-failure surface.
-
-we can predict the strengh of a laminate according to classical lamination
-theory and failure theory.
-
-}
-
-\begin{frame}{But, How to Design a Laminate?}
+\begin{frame}{怎样设计？}
 			\begin{itemize}
-				\item Target: strength
-				\item Constraints: weight cost etc.
-				\item Variable: ply directiron, number of plies, material
+				\item 目标：强度 
+				\item 约束条件：重量，成本等
+				\item 变量： 铺层角度，铺层数，材料等
 			\end{itemize}
 \end{frame}
 
@@ -315,17 +145,20 @@ material to satisfy engineering requirements. such as the weight and cost.
 thickness, the number of layers, the ply oritentation. And all these variables
 are discrete in practice.  So in nature the design of laminated composite
 material is a constrained optimization with discrete variables.
+在生产实际中，为了满足工程强度，生产成本的需要，往往需要对层合材料进行设计。
+层合材料的强度取决于层合板的层数，铺层角，层合材料等。这些决定层合板强度的变量
+都是离散的，因此层合材料的设计是一个受约束的离散变量的优化问题。
 }
 
 
-\begin{frame}{1. Methodology \hfill KIT} 
+\begin{frame}{研究方法} 
 	\begin{columns}
 		\begin{column}{0.65\textwidth}
 			\begin{itemize}
-				\item  1. formulate the objective function, assume it is $f(x)$.
-				\item  2. to satisfy the constraints, adding punishment items
+				\item  1. 构造目标函数 $f(x)$.
+				\item  2. 为满足约束条件，添加惩罚项
 					$\phi_1(x),\phi_2(x),\cdots, \phi_n(x)$ 
-				\item  3. reformulate the objective functions as
+				\item  3. 重新构造目标函数
 
 					$f(x)+c_1\phi_1(x)+c_2\phi_2(x)+ \cdots + c_n\phi_n(x)$
 			\end{itemize}
@@ -336,26 +169,34 @@ material is a constrained optimization with discrete variables.
 	\end{columns}
 \end{frame}
 
-\note{One of the most natural way to solve this problem is to adopt genetic
+\note{
+离散变量的优化问题可以使用遗传算法进行解决，因为其不需要变量是连续的。
+使用经典的遗传算法流程如下：
+1. 构造目标函数
+2. 为满足约束条件，添加惩罚项到目标函数
+3. 重新构造目标函数
+但是遗传算法是为了无约束的目标优化提出来的，对目标函数的重新构造会降低遗传算法的
+性能, 而且搜寻的结果受重新构造目标函数系数的影响。
+
+	One of the most natural way to solve this problem is to adopt genetic
 algorithm, because it doesn't require the variable to be continuous. 
 This classical method works in the following step 
 1. formulate the objective function. 
 2. append all the constraints to the objective function as punishment items
 3. reformulate the objective function.
 In this formula, the coefficient c subscript 1 is coefficient whose value is from 0 to 1.
-
 The drawback of this method is that genetic algorithm is proposed for unconstrained problem, you have to reformulate the objective function.
 }
 
 
 
-\begin{frame}{1. Methodology \hfill }
+\begin{frame}{研究方法}
 	\begin{columns}
 		\begin{column}{0.6\textwidth}
 			\begin{itemize}
-				\item  1. formulate the objective function, assume it is $f(x)$.
-				\item  2. to satisfy the constraints, maintaining different groups in the population 
-				\item  3. do not change the objective function $f(x)$.
+				\item  1. 构造目标函数 $f(x)$.
+				\item  2. 为满足约束条件，在群体中维护不同的子群 
+				\item  3. 不改变目标函数 $f(x)$.
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.4\textwidth}
@@ -377,16 +218,17 @@ The drawback of this method is that genetic algorithm is proposed for unconstrai
 	and proper group.
  }
 
-\begin{frame}{Definition \hfill}
+\begin{frame}{定义}
 		\begin{itemize}
-			\item An individual is active if its constraint value is far smaller than the
-				threshold. A group is consist of
-				active individuals are called as active group.
-			\item An individual is potential if its constraint value is  close but smaller than the
-				thresold. The corresponding group is
-				refered as potential group.
-			\item An individual is proper if it satisfy all the constraints. Its
-				counterpart group is written as proper group.
+			\item
+				活跃个体：如果一个个体的约束值远小于约束条件，那么我们称该个体为活跃个体，
+				该个体所在的子群为活跃子群。
+			\item
+				潜在个体：如果一个个体的约束值小于约束条件，那么我们称该个体为潜在个体，
+				该个体所在的子群为潜在子群。
+			\item
+				合适个体：如果一个个体的约束值满足约束条件，那么我们称该个体为合格个体，
+				该个体所在的子群为合适子群。
 		\end{itemize}
 \end{frame}
 
@@ -397,16 +239,15 @@ find possible solutions. In the proper group, they are  the individual that we w
 
 
 
-\begin{frame}{Techniques for Mutation \hfill KIT}
+\begin{frame}{研究方法}
     \begin{columns}[c]
     \begin{column}{1\textwidth}
 		$\text{md} = [CT_1, \cdots, CT_{n-1}, CT_n] -  [ICV_1, \cdots, ICV_{n-1},
 		ICV_n]$ \\
 		\begin{itemize}
-			\item  md means mutation direction.
-			\item  $CT_i$ denotes the i-th constraint, such as weight, strength ratio.
-			\item  $ICV_i$ denotes individual's i-th constraint value, such as,  weight, strength ratio 
-				of current individual.
+			\item  md 表示变异向量 
+			\item  $CT_i$ 表示第i个约束条件，比如质量，强度等。
+			\item  $ICV_i$ 表示当前个体的相应的约束值。
 		\end{itemize}
 
     \end{column}
@@ -421,7 +262,7 @@ find possible solutions. In the proper group, they are  the individual that we w
 chromosome.}
 
 
-\begin{frame}{1. Methodology \hfill KIT}
+\begin{frame}{研究方法}
     \begin{columns}[c]
 	\begin{column}{1\textwidth}
 		\begin{itemize}
@@ -432,7 +273,7 @@ chromosome.}
 					  LMC*[\sum_{i=1}^{N}{md_i}, 0] & \text{if $\sum_{i=1}^{N}{md_i} < 0$} \\
 				  \end{cases}
 				\] \\
-				LMC stands for length mutation coefficient, it's a positive integer.
+				LMC 表示长度变异系数。
 			\item $P(AM)$ = 
 				\[
 				  \begin{cases}
@@ -440,7 +281,7 @@ chromosome.}
 					0.5, \text{ AM = }[ AMC \sum_{i=1}^{N}{(-|CT_i-CV_i|)},0]
 				  \end{cases}
 				\] \\
-				AMC stands for angle mutation coefficient.
+				AMC 表示角度变异系数。 
 		\end{itemize}
 	\end{column}
 \end{columns}
@@ -478,13 +319,14 @@ first is mating pool classification, and the second is self-adaptive mutation
 operator. The advantage of this method is that We don't need to reformulate the
 objective function.}
 
-\begin{frame}{1. Result \hfill} 
+\begin{frame}{研究成果} 
 	%\input{fig/chapter4_first_table_comparsion.tex}
 	\input{fig/part1/part1/table/comparsion.tex}
 
 \end{frame}
-\note{We also compare our work with other results in other literature.
-	As you can see from the table, we obtained better results for both cases.
+\note{
+	在这里展现的是我们一部分的实验结果，从这里可以看出使用改进的遗传算法可以获得
+	更好的实验结果，
 }
 
 
@@ -510,7 +352,7 @@ objective function.}
 }
 
 
-\begin{frame}{发表论文}
+\begin{frame}{研究成果}
 	\begin{center}
 		\begin{itemize}
 			\item Huiyao Zhang, Atsushi Yokoyama. 2021. A Technique for Constrained Optimization of Cross‑ply Laminates Using a New
@@ -521,8 +363,8 @@ objective function.}
 	\end{center}
 \end{frame}
 
-\note{Chapter Four focuses on using an alternative method to predict the strength of a laminated composite material.
-
+\note{
+	使用改进的遗传算法成功解决了在生产实际中层合材料优化设计的问题，并发表了两篇学术论文。
 		 To reduce the computation cost in the strength prediction of
 			laminated structure with classical lamination theory and failure
 			theory.
@@ -546,7 +388,7 @@ objective function.}
 	经典的层合理论和纤维失效理论，它是使用解析的方法，根据经典的力学模型计算应力和应变来预测材料的强度。
 	这种方法存在的一个问题是，她的步骤比较繁琐，而且这个算法的时间复杂度比较高，因为包含了
 	大量的矩阵乘法和积分的运算。因此,我推荐使用数据驱动的方法，也就是神经网络来预测
-	复合材料的强度
+	复合材料的强度。
 
 Another problems arises from a laminate is the the strength prediction.
 	The traditional way of doing this follows a two-step precedure: first,
@@ -562,7 +404,14 @@ Another problems arises from a laminate is the the strength prediction.
 	\input{fig/chapter5_neural_network.tex}
 \end{frame}
 
-\note{we proposed the following general neural network to solve the strength
+\note{
+	1. 研究设计了一个三层的神经网络，因为三层是非线性的，
+  	   可以用来近似任意的连续函数。 而经典的层合理论和材料失效理论本质上是一个连续函数。
+	2. 研究认为每一个隐藏层的神经元可以看作是从输入层学习到的特征质，
+	   因此隐藏层的神经元应该部分于输入层连接。
+    3. 输出层的
+
+	we proposed the following general neural network to solve the strength
 	prediction. 
 	1. Neurons in the hidden layer are treated as feature extractor, which means
 	it learn something from the inputs, neurons in the hidden layer are partly
@@ -572,7 +421,7 @@ Another problems arises from a laminate is the the strength prediction.
 	as the feature learned from the inputs. Therefore the neurons in the outputs
 	layer should be fully connected with the previous layer.}
 
-\begin{frame}{2. Methodology \hfill }
+\begin{frame}{研究方法 }
 	\begin{figure}
 		\includegraphics[width=0.9\textwidth]{fig/a0_figure_ann_for_clt_architecture.png}
 		\caption{General neural network for prediction the strength of an angle ply laminate.}
@@ -600,7 +449,7 @@ Ultimate in-plane shear strength
 Longitudinal elastic modulus 
 }
 
-\begin{frame}{2. Methodology \hfill }
+\begin{frame}{研究方法 }
 	\begin{figure}
 		\input{fig/part3/fig/experiment_architecture_example1_code.tex}
 		\caption{Example of proposed architecture.}
@@ -617,20 +466,7 @@ Longitudinal elastic modulus
 zero.The last two column is the code for active function.}
 
 
-\begin{frame}{2. Methodology \hfill }
-	\begin{columns}
-		\begin{column}{0.8\textwidth}
-			\begin{figure}
-				\includegraphics[width=0.7\linewidth]{fig/part3/architecture_of_evolution.png}
-				\caption{The evolution of this neural network}
-			\end{figure}
-		\end{column}
-	\end{columns}
-\end{frame}
-
-\note{This neual network is neural network has four parts of evolution:}
-
-\begin{frame}{2. Methodology \hfill }
+\begin{frame}{研究方法 }
 	\begin{figure}
 	\centering
 	\includegraphics[scale=0.3]{fig/part3/interitance.png}
@@ -657,7 +493,7 @@ from -90 to 90. We use three different composite materail. The training data is
 randomly sampled from this space. After obtain the two ouputs, we need
 normalize the training data for the learning of the neural network.}
 
-\begin{frame}{2. Result \hfill }
+\begin{frame}{研究成果}
 	\begin{columns}
 		\begin{column}{0.6\textwidth}
 			\input{fig/part3/tab/result_ann_valuation.tex}
@@ -672,24 +508,20 @@ normalize the training data for the learning of the neural network.}
 \end{frame}
 
 \note{
+ 为了验证所推荐的网络结构和全连接神经网络在材料性能预测的差异，我们同时训练了一个全连接的
+ 神经网络。通过观察实验结果可以发现，演化神经网络在training error和validation
+ error两个指标上都比全连接神经网络有更好的数据表现。并发表有一篇学术论文。 
+
 We also trained a neural network which has the same architecture as the neural
 network that we obtained from genetic algorithm. The only difference is that
 neurons in the hidden layer are fully connected with the inputs.
 }
 
 
-\note{
-		 Neural network can be adopted to predict the strength of laminated composite material instead of the classical analytical approach.
-		 GA-based neural network outperformed fully-connected neural network in the strength prediction.
-
-	The summary of this chapter is as following:
-		Neural network can be adopted to predict the strength of laminated composite material instead of the classical analytical approach.
-		GA-based neural network outperformed fully-connected neural network in the strength prediction.
-}
 
 \begin{frame}
 	\begin{center}
-		\Huge{Thank You}
+		\Huge{谢谢}
 	\end{center}
 \end{frame}
 
