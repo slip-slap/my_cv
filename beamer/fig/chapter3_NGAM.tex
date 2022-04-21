@@ -39,9 +39,9 @@
 			\node at ($(potential_group_2.north)+(0cm, 1.0cm)$) {选择};
 			% proper group
 			\node (proper_group_1) at ($(population.south)+(3cm, -2.0cm)$) [subgroup]
-				{合适子群};
+				{合格子群};
 			\node (proper_group_2) at ($(proper_group_1.south)+(0cm, -1.5cm)$)[subgroup]
-				{合适子群};
+				{合格子群};
 			\draw[->] (population.south) -- (proper_group_1.north);
 			\draw[->] (proper_group_1.south) -- (proper_group_2.north);
 			% crossover
@@ -65,6 +65,6 @@
 			\draw[->] (active_group_3.west) -- ($(active_group_3.west) + (-1cm,0cm)$)
 				|- (evaluate.west);
 		\end{tikzpicture}
-	\caption{General flowchart of proposed GA model.}
+	\caption{改进后遗传算法流程图}
 	\label{fig:model}
 \end{figure}

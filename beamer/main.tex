@@ -25,7 +25,10 @@
 \usecolortheme{spruce}
 \setbeamercolor{background canvas}{bg=white}
 
-\title{无锡太湖学院物联网工程学院面试汇报}
+%\title{无锡太湖学院物联网工程学院面试汇报}
+\title{第二届崇真青年学者学术沙龙报告\\
+\large 计算机与人工智能学院 \\
+\normalsize 武汉纺织大学}
 \author{汇报人：张辉耀 }
 \date{汇报时间：2022年4月24号}
 \setbeamertemplate{itemize/enumerate body begin}{\large}
@@ -122,8 +125,8 @@ a laminate.
 thickness of the layer, the fiber orientation, and engineering properites of the
 material. The properitis of a laminate is determined by the combination of these
 layers.  
-图三是层合材料的结构图
-对于层合材料来说，它的强度是由材料的铺层角，材料的性质和材料的厚度决定。
+图三是层合材料的结构图, 对于层合材料各层材料而言，铺层的角度，厚度和材料可以是
+不同的，所以层合材料的设计有着极大的自由度。
 
 A question arises from this is how to determine the strength of a laminate.
 }
@@ -146,7 +149,7 @@ thickness, the number of layers, the ply oritentation. And all these variables
 are discrete in practice.  So in nature the design of laminated composite
 material is a constrained optimization with discrete variables.
 
-在生产中，使用的层合材料除了需要满足工程强度的要求以外，还需要对生产成本和材料本身的
+在生产中，使用的层合材料除了需要满足工程强度的要求以外，还对生产成本和材料本身的
 质量要求。
 层合材料的强度取决于层合板的层数，铺层角，层合材料等。以上这些决定层合板强度的变量
 都是离散的，因此层合材料的设计是一个受约束的离散变量的优化问题。
@@ -173,9 +176,9 @@ material is a constrained optimization with discrete variables.
 
 \note{
 对于离散变量的优化问题可以使用遗传算法进行解决，因为其不需要变量是连续的。
-使用经典的遗传算法流程如下：
+直接使用遗传算法来解决层合材料的设计问题方法如下：
 1. 构造目标函数
-2. 为满足约束条件，添加惩罚项到目标函数
+2. 为满足约束条件，添加相应的惩罚项到目标函数
 3. 重新构造目标函数
 但是这种做法会有两个问题：
 但是遗传算法是为了无约束的目标优化提出来的，对目标函数的重新构造会影响遗传算法的
@@ -219,20 +222,21 @@ The drawback of this method is that genetic algorithm is proposed for unconstrai
 	group is different. For the active group, the mutation follows the
 	traditional pattern; we will adopt new mutation technique for the potential
 	and proper group.
+	第二个改进是引入了自适应的演化算子，为潜在子群和合格子群。
 	基于这两个techique,我们可以在不重新构造目标函数的前提下，完成受约束离散变量的优化
  }
 
 \begin{frame}{定义}
 		\begin{itemize}
 			\item
-				活跃个体：如果一个个体的约束值远小于约束条件，那么我们称该个体为活跃个体，
+				活跃个体和活跃子群：如果一个个体的约束值远小于约束条件，那么我们称该个体为活跃个体，
 				该个体所在的子群为活跃子群。
 			\item
-				潜在个体：如果一个个体的约束值小于约束条件，那么我们称该个体为潜在个体，
+				潜在个体和潜在子群：如果一个个体的约束值小于或者接近约束条件，那么我们称该个体为潜在个体，
 				该个体所在的子群为潜在子群。
 			\item
-				合适个体：如果一个个体的约束值满足约束条件，那么我们称该个体为合格个体，
-				该个体所在的子群为合适子群。
+				合格个体和合格子群：如果一个个体的约束值满足约束条件，那么我们称该个体为合格个体，
+				该个体所在的子群为合格子群。
 		\end{itemize}
 \end{frame}
 
@@ -247,8 +251,6 @@ find possible solutions. In the proper group, they are  the individual that we w
 
 
 \begin{frame}{自适应变异算子}
-    \begin{columns}[c]
-    \begin{column}{1\textwidth}
 		$\text{md} = [CT_1, \cdots, CT_{n-1}, CT_n] -  [ICV_1, \cdots, ICV_{n-1},
 		ICV_n]$ \\
 		\begin{itemize}
@@ -257,109 +259,30 @@ find possible solutions. In the proper group, they are  the individual that we w
 			\item  $ICV_i$ 表示当前个体的相应的约束值。
 		\end{itemize}
 
-    \end{column}
-\end{columns}
+		\begin{equation}
+			\text{长度变异算子} =  
+			\left\{
+				\begin{array}{l}
+					  LMC*[0, \sum_{i=1}^{N}{md_i}]  \text{ if $\sum_{i=1}^{N}{md_i} > 0$} \\
+					  LMC*[\sum_{i=1}^{N}{md_i}, 0]  \text{ if $\sum_{i=1}^{N}{md_i} < 0$} \\
+				  \end{array} 
+				  \right.
+		\end{equation}
+		\begin{equation}
+			\text{角度变异算子} = 
+				\left\{
+					\begin{array}{l}
+					0.5, \text{ AM = }[0,AMC \sum_{i=1}^{N}{(|CT_i-CV_i|)}] \\ 
+					0.5, \text{ AM = }[ AMC \sum_{i=1}^{N}{(-|CT_i-CV_i|)},0] \\
+					\end{array}
+					\right.
+		\end{equation}
 \end{frame}
 
 \note{
 	第二个technique是自适应变异算子，它的意思就是个体能够根据自身的约束值
 	和约束条件的关系调整演化的方向和速度。
 	在这个公式里，
-	The second technique in the proposed genetic algorithm is self-adaptive mutation
-	operator, which means it can adjust the mutation according to the
-	constraint value.  In this formula, the CTn represents threshold, ICVn
-	denotes the corresponding individual's constraint value.  We get a mutation
-	vector from this formula, which can be used to direct the mutation of the
-chromosome.}
-
-
-\begin{frame}{自适应变异算子}
-    \begin{columns}[c]
-	\begin{column}{1\textwidth}
-		\begin{itemize}
-			\item length mutation =  
-				\[
-				  \begin{cases}
-					  LMC*[0, \sum_{i=1}^{N}{md_i}] & \text{if $\sum_{i=1}^{N}{md_i} > 0$} \\
-					  LMC*[\sum_{i=1}^{N}{md_i}, 0] & \text{if $\sum_{i=1}^{N}{md_i} < 0$} \\
-				  \end{cases}
-				\] \\
-				LMC 表示长度变异系数。
-			\item $P(AM)$ = 
-				\[
-				  \begin{cases}
-					0.5, \text{ AM = }[0,AMC \sum_{i=1}^{N}{(|CT_i-CV_i|)}] \\ 
-					0.5, \text{ AM = }[ AMC \sum_{i=1}^{N}{(-|CT_i-CV_i|)},0]
-				  \end{cases}
-				\] \\
-				AMC 表示角度变异系数。 
-		\end{itemize}
-	\end{column}
-\end{columns}
-\end{frame}
-
-
-\note{The self-adaptive mutation is consist of two parts: length mutation and angle mutation.
-	for the length mutation, we increase the length of the chromosome when the
-	sum of entries in the mutation is great than zero,  this is because the
-	bigger the length is, the more possible it satisfy the constraint. 
-	For the angle mutation, we just
-	random change the angels with probability 0.5, because there is no clear
-	relation between the ply oritentation and the strength.
-}
-
-
-
-\note{
-		 To overcome the drawback of traditional genetic algorithm in the
-			design of laminated sequence, and propose a new genetic algorithm
-			framework with two techniques for solving constrained problem
-			optimization.
-		 To improve the performance and efficient of the design laminate sequence, compared with the other optimization method.
-		 To obtain feasible solutions for single-constrained or multiple constrained design of laminate sequence. 
-
-The first is overcome the drawback of traditional genetic algorithm in the
-design of a laminate.
-The second is to improve the performance and efficient of the design of a
-laminate.
-The third is to find feasible solutions for single-constrained and multiple
-constrained problem.
-
-Therefore, we proposed a new genetic algorithm with two Techniques, the
-first is mating pool classification, and the second is self-adaptive mutation
-operator. The advantage of this method is that We don't need to reformulate the
-objective function.}
-
-\begin{frame}{研究成果} 
-	%\input{fig/chapter4_first_table_comparsion.tex}
-	\input{fig/part1/part1/table/comparsion.tex}
-\end{frame}
-\note{
-	在这里展现的是我们一部分的实验成果，从这里可以看出使用改进的遗传算法可以获得
-	实验结果是更好的。
-}
-
-
-\note{
-	We have three conclusions from this chapter:
-	The first is that the proposed genetic algorithm can be used to guide the
-	design of laminated structure with one or multiple constraints without
-	modifying the objective function.
-	The second is mating pool classification and self-adaptive mutation play an
-	important role during the optimization process, the length muation
-	coefficient can be used to control the converge speed of this algorithm.
-	This method will have a fine-grained search with a small length mutation
-	coefficient.
-
-	The proposed algorithm outperformed or provided an alternative feasible
-	solution compared with other literature.  The proposed genetic algorithm can
-	be used to guide the design of laminated structure with one or multiple
-	constraints without modifying the objective function.  The simulation
-	results have shown that the two technique: mating pool classification and
-	self-adaptive mutation play an important role during the optimization
-	process, the length muation coefficient can be used to control the converge
-	speed of this algorithm.  The proposed algorithm is able to outperform or
-	provide an alternative solution compared with other literature.
 }
 
 
@@ -375,12 +298,8 @@ objective function.}
 \end{frame}
 
 \note{
-	使用改进的遗传算法成功解决了在生产实际中层合材料优化设计的问题，并发表了两篇学术论文。
-		 To reduce the computation cost in the strength prediction of
-			laminated structure with classical lamination theory and failure
-			theory.
-		 To simplify the procedure of strength prediction calculation.
-		 To provide a data-driven method to compute the strength ratio instead of the traditional analytical method.
+	使用改进的遗传算法解决了在多个层合材料优化设计的问题，在计算机和材料的期刊上分别
+	发表有学术论文。
 }
 
 
@@ -397,7 +316,7 @@ objective function.}
 \note{
 	我博士期间研究的第二个问题呢
     我们可以使用这个幻灯片中的公式来计算层合材料的强度，这些公式有一个名字叫做，
-	经典的层合理论和纤维失效理论，它是使用解析的方法，根据经典的力学模型计算应力和应变来预测材料的强度。
+	经典的层合理论和纤维失效理论。它本质上是一种解析的方法，根据经典的力学模型计算应力和应变来预测材料的强度。
 	这种方法存在的一个问题是，她的步骤比较繁琐，而且这个算法的时间复杂度比较高，因为包含了
 	大量的矩阵乘法和积分的运算。因此,我尝试使用使用数据驱动的方法，也就是神经网络来预测
 	复合材料的强度。
@@ -417,13 +336,16 @@ Another problems arises from a laminate is the the strength prediction.
 \end{frame}
 
 \note{
-	那么需要什么样结构的网络来预测复合材料的强度呢？我们推荐了一下的拓扑结构。该网络有以下
+	那么什么样的网络结构来预测复合材料的强度呢？我们推荐了一下的拓扑结构。该网络有以下
 	几个特点
 	1. 研究设计了一个三层的神经网络，因为三层是非线性的，
   	   可以用来近似任意的连续函数。 而经典的层合理论和材料失效理论本质上是一个连续函数。
-	2. 研究认为每一个隐藏层的神经元可以看作是从输入层学习到的特征质，
+	2.
+	第二个特点是隐藏层神经元的数量以及隐藏层和输入层的连接关系是不确定的,
+	为了寻找好的结构，采用了对网络结构进行编码，使用遗传算法来进行搜索优化。
+
+	3. 研究认为每一个隐藏层的神经元可以看作是从输入层学习到的特征质，
 	   因此隐藏层的神经元应该部分于输入层连接。
-    3. 输出层的
 
 	we proposed the following general neural network to solve the strength
 	prediction. 
@@ -460,12 +382,6 @@ Another problems arises from a laminate is the the strength prediction.
 	Major Poisson's ratio 
 	Shear modulus 
 	the fourth part is five constants about the failure properties of the material: 
-Ultimate longitudinal tensile strength 
-Ultimate longitudinal compressive strength 
-Ultimate transverse tensile strength 
-Ultimate transverse compressive strength 
-Ultimate in-plane shear strength 
-Longitudinal elastic modulus 
 }
 
 \begin{frame}{研究方法 }
@@ -477,32 +393,27 @@ Longitudinal elastic modulus
 	\input{fig/part3/fig/experiment_architecture_example1_table-one-example.tex}
 \end{frame}
 
-\note{In order to adopte genetic algorithm for neural network revolution, we
-	need to represent this neural network with a chromosome. Table 8 is the
-	binary representation of the above neural network, with one row
-	representing a neuron.  for every neuron, if there exist a connection
-	between the neuron and the inputs, we denote with 1, otherwise, it is
-zero.The last two column is the code for active function.}
+\note{
+	图八是我们随机产生的一个用于层合材料预测的网络结构，它有五个隐藏的神经元，每一个神经元
+	与输入层的连接关系都是不同的，我们用下面的表哥来表示连接关系以及相对应的激活函数。
+	在这个表哥中， }
 
 
 \begin{frame}{研究方法 }
 	\begin{figure}
 	\centering
 	\includegraphics[scale=0.3]{fig/part3/interitance.png}
-	\caption{Examples of three ANNs, with (a) and (b) as parent ANNs, and (c) as
-	the child of (a) and (b). }
-		\label{fig:anns}
+	\caption{基于遗传算法产生子神经网络 }
 	\end{figure}
 \end{frame}
 
-\note{We also present the crossover operator about the neural network. child c
+\note{
+	在这里我们给出的是根据上一代的神经网络产生子神经网络的方式。
+
+	We also present the crossover operator about the neural network. child c
 inherits the connection relationship part from parent 1 denoted by the darker
 dashed lines,and the rest from parent 2 denoted by the gray dashed line}
 
-
-\begin{frame}{2. Preparation of Training Data \hfill KIT}
-	\input{fig/chapter5_table_training_data.tex}
-\end{frame}
 
 \note{Since it is impossible to obtain enough training data from experiment,
 therefore, we generate the training data by use of classical lamination theory and
@@ -529,8 +440,8 @@ normalize the training data for the learning of the neural network.}
 \note{
  为了验证所推荐的网络结构和全连接神经网络在材料性能预测的差异，我们同时训练了一个全连接的
  神经网络。通过观察实验结果可以发现，演化神经网络在training error和validation
- error两个指标上都比全连接神经网络有更好的数据表现。并把我们的研究成果发表在计算机类
- 的期刊上。。 
+ error两个指标上都比全连接神经网络有更好的数据表现。并把我们的基于数据驱动的层合材料强度预测的研究成果发表在计算机类
+ 的期刊上。 
 
 We also trained a neural network which has the same architecture as the neural
 network that we obtained from genetic algorithm. The only difference is that
