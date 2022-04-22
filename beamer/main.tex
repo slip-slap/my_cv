@@ -128,14 +128,18 @@ mechanical strength, heat resistant, and very low smoke evolution in a smoke.
 
 \begin{frame}{什么是层合材料？}
     \begin{columns}[c]
-		\begin{column}{0.9\textwidth}
+		\begin{column}{0.6\textwidth}
 			\begin{figure}
 			\includegraphics[width=0.85\linewidth]{fig/part0/Schematic_of_a_laminate.png}
 			\caption{ 层合材料结构图 (来源: Autar k. kaw 2006)}
 			\end{figure}
 		\end{column}
-		%\begin{column}{0.4\textwidth}
-		%\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+			\includegraphics[width=1\linewidth]{fig/local.png}
+			\caption{ 层合材料的断面图 (来源: Autar k. kaw 2006)}
+			\end{figure}
+		\end{column}
 	\end{columns}
 \end{frame}
 \note{ 
@@ -156,9 +160,13 @@ A question arises from this is how to determine the strength of a laminate.
 
 \begin{frame}{怎样设计？}
 			\begin{itemize}
-				\item 目标：强度 
-				\item 约束条件：重量，成本等
-				\item 变量： 铺层角度，铺层数，材料等
+					\item 层合材料设计：
+				\begin{itemize}
+					\item 目标：强度 
+					\item 约束条件：重量，成本等
+					\item 变量： 铺层角度，铺层数，材料等
+				\end{itemize}
+				\item 本质上是受约束离散变量的优化设计问题
 			\end{itemize}
 \end{frame}
 
@@ -304,7 +312,9 @@ find possible solutions. In the proper group, they are  the individual that we w
 \note{
 	第二个technique是自适应变异算子，它的意思就是个体能够根据自身的约束值
 	和约束条件的关系调整演化的方向和速度。
-	在这个公式里，
+	我们是通过以下的方式设计了两个变异算子，长度变异和角度变异：
+	1. 根据个体的自身约束值和约束条件，得到一个变异向量
+	2. 根据变异向量调整层合材料的角度变异和角度变异。
 }
 
 
@@ -430,7 +440,8 @@ Another problems arises from a laminate is the the strength prediction.
 \end{frame}
 
 \note{
-	在这里我们给出的是根据上一代的神经网络产生子神经网络的方式。
+	在这里我们给出的是根据使用遗传算法根据上一代的神经网络产生子神经网络的方式。产生的子神经网络
+	会继承父神经网络的连接关系和激活函数。
 
 	We also present the crossover operator about the neural network. child c
 inherits the connection relationship part from parent 1 denoted by the darker
@@ -472,11 +483,17 @@ neurons in the hidden layer are fully connected with the inputs.
 
 \begin{frame}{\hfill}
 	\begin{tikzpicture}
-		%\draw (2,2) grid (10,10);
-		\draw[blue,dashed] (8,7) -- (11,3);
-		\draw[blue,dashed] (2,3) -- (8,7);
-		\draw[blue,dashed] (8,7.5) -- (11,3.5);
-		\draw[blue,dashed] (2,3.5) -- (8,7.5);
+		%\draw (1,1) grid (10,10);
+		\draw[blue,dashed] (4,5) -- (6,4);
+		\draw[blue,dashed] (6,4) -- (8,6);
+		\draw[blue,dashed] (8,6) -- (9,5);
+		\draw[blue,dashed] (9,5) -- (11,8);
+		\draw[blue,dashed] (2,3) -- (4,5);
+		\draw[blue,dashed] (2,3.5) -- (4,5.5);
+		\draw[blue,dashed] (4,5.5) -- (6,4.5);
+		\draw[blue,dashed] (6,4.5) -- (8,6.5);
+		\draw[blue,dashed] (8,6.5) -- (9,5.5);
+		\draw[blue,dashed] (9,5.5) -- (11,8.5);
 		\node at (8,5) {\textcolor{blue}{\Huge{谢谢}}};
 	\end{tikzpicture}
 \end{frame}
