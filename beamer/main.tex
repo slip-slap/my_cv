@@ -25,12 +25,31 @@
 \usecolortheme{spruce}
 \setbeamercolor{background canvas}{bg=white}
 
+% Top left Position of a logo in beamer
+\titlegraphic { 
+\begin{tikzpicture}[overlay,remember picture]
+\node[left=0.0cm] at (current page.28){
+    \includegraphics[width=2.8cm]{wuhan.png}
+};
+\node[left=-4cm] at (current page.151){
+    \includegraphics[width=3.5cm]{kit.png}
+};
+\end{tikzpicture}
+}
+
+\usepackage{textpos}
+\addtobeamertemplate{frametitle}{}{
+	\begin{textblock*}{15mm}(0.86\textwidth,-1.1cm)
+		\includegraphics[width=2.5cm]{kit_logo.png}
+	\end{textblock*}
+	}	
+
 %\title{无锡太湖学院物联网工程学院面试汇报}
 \title{第二届崇真青年学者学术沙龙报告\\
 \large 计算机与人工智能学院 \\
 \normalsize 武汉纺织大学}
 \author{汇报人：张辉耀 }
-\date{汇报时间：2022年4月24号}
+\date{汇报时间：2022年4月23号}
 \setbeamertemplate{itemize/enumerate body begin}{\large}
 
 \DeclarePairedDelimiter\Floor\lfloor\rfloor
@@ -45,13 +64,16 @@
 
 \begin{frame}{教育背景}
 	\begin{itemize}
-		\item 本科 \textcolor{white}{e} 大连工业大学     
-		\item 硕士 \textcolor{white}{e} 上海东华大学       
+		\item 本科 \textcolor{white}{e} 大连工业大学 \textcolor{white}{e}
+			2011.09-2015.07
+		\item 硕士 \textcolor{white}{e} 上海东华大学  \textcolor{white}{e}
+			2015.09-2018.03
 			\begin{itemize}
 				\item 专业：数字化纺织工程
 				\item 研究内容：椭圆傅立叶和凸包算法在人体建模的应用 
 			\end{itemize}
-		\item 博士 \textcolor{white}{e} 日本京都工艺纤维大学 
+		\item 博士 \textcolor{white}{e} 日本京都工艺纤维大学 \textcolor{white}{e}
+			2018.09-2022.03
 			\begin{itemize}
 				\item 专业：先端纤维学
 				\item 研究内容：遗传算法和神经网络在材料科学的应用 
@@ -448,12 +470,15 @@ network that we obtained from genetic algorithm. The only difference is that
 neurons in the hidden layer are fully connected with the inputs.
 }
 
-
-
-\begin{frame}
-	\begin{center}
-		\Huge{谢谢}
-	\end{center}
+\begin{frame}{\hfill}
+	\begin{tikzpicture}
+		%\draw (2,2) grid (10,10);
+		\draw[blue,dashed] (8,7) -- (11,3);
+		\draw[blue,dashed] (2,3) -- (8,7);
+		\draw[blue,dashed] (8,7.5) -- (11,3.5);
+		\draw[blue,dashed] (2,3.5) -- (8,7.5);
+		\node at (8,5) {\textcolor{blue}{\Huge{谢谢}}};
+	\end{tikzpicture}
 \end{frame}
 
 
