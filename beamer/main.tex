@@ -62,6 +62,23 @@
 也感谢各位老师在星期天的下午,这样一个时间，听我汇报,
 下面我就我的教育背景做一个简单的介绍。}
 
+\begin{frame}{汇报内容}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			\begin{itemize}
+					\item 教育背景
+					\item 博士课题
+					\item 近五年发表论文
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[width=1.0\linewidth]{book.png}
+			\end{figure}
+		\end{column}
+	\end{columns}
+\end{frame}
+
 \begin{frame}{教育背景}
 	\begin{itemize}
 		\item 本科 \textcolor{white}{e} 大连工业大学 \textcolor{white}{e}
@@ -481,22 +498,47 @@ network that we obtained from genetic algorithm. The only difference is that
 neurons in the hidden layer are fully connected with the inputs.
 }
 
+\begin{frame}{近五年发表论文}
+	\begin{center}
+	\begin{itemize}
+\item \small Huiyao Zhang, Atsushi Yokoyama. 2021. A Technique for Constrained Optimization of Cross‐ply Laminates Using a New Variant of Genetic Algorithm. International Journal of Advanced Computer Science and Applications, 12(6): 760‐767.
+\item \small Huiyao Zhang, Atsushi Yokoyama. 2021. Predicting Strength Ratio of Laminated Composite Material with Evolutionary Artificial Neural Network. International Journal of Advanced Computer Science and Applications, 12(6): 11‐18.
+	\item \small Huiyao Zhang, Atsushi Yokoyama. 2022. Optimum Design of Laminated Composites for Minimum Thickness by a Variant of Genetic Algorithm. Journal of Textile Engineering(accepted).
+\item \small Hui‐Yao Zhang, Duan Li, Hao‐Yang Xie, Yue‐Qi Zhong. 2017. A Study on the Female Chest Contour with Elliptic Fourier Analysis. Journal of Fiber Bioengineering and Informatics, 10(3): 131‐139.
+\item \small Hui‐Yao Zhang, Duan Li, Hao‐Yang Xie, Yue‐Qi Zhong. 2017. Elliptic Fourier Analysis on Female Chest Contour. Textile Bioengineering and Informatics Symposium.
+	\end{itemize}
+	\end{center}
+\end{frame}
+
 \begin{frame}{\hfill}
+
+\begin{textblock*}{2cm}(-1cm,-2cm) % {block width} (coords)
+\includegraphics[width=1.5cm]{kit.png}
+\end{textblock*}
+
+\begin{textblock*}{2cm}(5.8cm,-1.9cm) % {block width} (coords)
+	\includegraphics[width=6.0cm]{last_logo.png}
+\end{textblock*}
+
 	\begin{tikzpicture}
-		%\draw (1,1) grid (10,10);
-		\draw[blue,dashed] (4,5) -- (6,4);
-		\draw[blue,dashed] (6,4) -- (8,6);
-		\draw[blue,dashed] (8,6) -- (9,5);
-		\draw[blue,dashed] (9,5) -- (11,8);
-		\draw[blue,dashed] (2,3) -- (4,5);
-		\draw[blue,dashed] (2,3.5) -- (4,5.5);
-		\draw[blue,dashed] (4,5.5) -- (6,4.5);
-		\draw[blue,dashed] (6,4.5) -- (8,6.5);
-		\draw[blue,dashed] (8,6.5) -- (9,5.5);
-		\draw[blue,dashed] (9,5.5) -- (11,8.5);
-		\node at (8,5) {\textcolor{blue}{\Huge{谢谢}}};
+		\coordinate (shift) at (0,0);
+		\begin{scope}[shift=(shift)]
+			%\draw (1,1) grid (10,10);
+			\draw[blue,dashed] (4,5) -- (6,4);
+			\draw[blue,dashed] (6,4) -- (8,6);
+			\draw[blue,dashed] (8,6) -- (9,5);
+			\draw[blue,dashed] (9,5) -- (11,8);
+			\draw[blue,dashed] (2,3) -- (4,5);
+			\draw[blue,dashed] (2,3.5) -- (4,5.5);
+			\draw[blue,dashed] (4,5.5) -- (6,4.5);
+			\draw[blue,dashed] (6,4.5) -- (8,6.5);
+			\draw[blue,dashed] (8,6.5) -- (9,5.5);
+			\draw[blue,dashed] (9,5.5) -- (11,8.5);
+		\node at (8,6) {\textcolor{blue}{\Huge{谢谢}}};
+		\end{scope}
 	\end{tikzpicture}
 \end{frame}
+
 
 
 \end{document}

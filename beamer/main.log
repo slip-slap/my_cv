@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.3.27)  22 APR 2022 18:19
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.3.27)  22 APR 2022 21:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1621,54 +1621,66 @@ Overfull \vbox (47.28792pt too high) detected at line 60
 [1
 
 ]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 80.
+
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 80.
+
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 80.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 80.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 80.
+File: book.png Graphic file (type bmp)
+<book.png>
 File: kit_logo.png Graphic file (type bmp)
 <kit_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 82--82
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 80--80
 [][]  
  []
 
 [2
 
 ]
+File: kit_logo.png Graphic file (type bmp)
+<kit_logo.png>
+
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 99--99
+[][]  
+ []
+
+[3
+
+]
 File: fig/part0/space-shuttle.png Graphic file (type bmp)
 <fig/part0/space-shuttle.png>
-LaTeX Font Info:    Trying to load font information for U+msa on input line 107
-.
- (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 107
-.
-
-(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 107.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 107.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 107.
 File: fig/part0/laminate_product.png Graphic file (type bmp)
 <fig/part0/laminate_product.png>
 
-Overfull \hbox (5.60594pt too wide) in paragraph at lines 107--107
+Overfull \hbox (5.60594pt too wide) in paragraph at lines 124--124
 \TU/lmss/m/n/10 (https://www.thegillcorp.com)|  
  []
 
 File: kit_logo.png Graphic file (type bmp)
 <kit_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 107--107
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 124--124
 [][]  
  []
 
 
-Overfull \vbox (7.93741pt too high) detected at line 107
+Overfull \vbox (7.93741pt too high) detected at line 124
  []
 
-[3
+[4
 
 ]
 File: fig/part0/Schematic_of_a_laminate.png Graphic file (type bmp)
@@ -1678,38 +1690,38 @@ File: fig/local.png Graphic file (type bmp)
 File: kit_logo.png Graphic file (type bmp)
 <kit_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 144--144
-[][]  
- []
-
-[4
-
-]
-File: kit_logo.png Graphic file (type bmp)
-<kit_logo.png>
-
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 171--171
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 161--161
 [][]  
  []
 
 [5
 
 ]
+File: kit_logo.png Graphic file (type bmp)
+<kit_logo.png>
+
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 188--188
+[][]  
+ []
+
+[6
+
+]
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <12> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 205.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 222.
  (./fig/chapter3_OGAM.tex)
 File: kit_logo.png Graphic file (type bmp)
 <kit_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 205--205
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 222--222
 [][]  
  []
 
 
-Overfull \vbox (4.24118pt too high) detected at line 205
+Overfull \vbox (4.24118pt too high) detected at line 222
  []
 
-[6
+[7
 
 ] (./fig/chapter3_NGAM.tex
 Overfull \hbox (2.66554pt too wide) in paragraph at lines 67--68
@@ -1720,22 +1732,12 @@ Overfull \hbox (2.66554pt too wide) in paragraph at lines 67--68
 File: kit_logo.png Graphic file (type bmp)
 <kit_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 243--243
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 260--260
 [][]  
  []
 
 
-Overfull \vbox (40.50871pt too high) detected at line 243
- []
-
-[7
-
-]
-File: kit_logo.png Graphic file (type bmp)
-<kit_logo.png>
-
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 271--271
-[][]  
+Overfull \vbox (40.50871pt too high) detected at line 260
  []
 
 [8
@@ -1744,7 +1746,7 @@ Overfull \hbox (28.45276pt too wide) in paragraph at lines 271--271
 File: kit_logo.png Graphic file (type bmp)
 <kit_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 310--310
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 288--288
 [][]  
  []
 
@@ -1754,11 +1756,21 @@ Overfull \hbox (28.45276pt too wide) in paragraph at lines 310--310
 File: kit_logo.png Graphic file (type bmp)
 <kit_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 330--330
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 327--327
 [][]  
  []
 
 [10
+
+]
+File: kit_logo.png Graphic file (type bmp)
+<kit_logo.png>
+
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 347--347
+[][]  
+ []
+
+[11
 
 ]
 File: fig/part3/formula_for_stenght_calculation.png Graphic file (type bmp)
@@ -1766,21 +1778,21 @@ File: fig/part3/formula_for_stenght_calculation.png Graphic file (type bmp)
 File: kit_logo.png Graphic file (type bmp)
 <kit_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 346--346
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 363--363
 [][]  
  []
 
-[11
+[12
 
 ] (./fig/chapter5_neural_network.tex)
 File: kit_logo.png Graphic file (type bmp)
 <kit_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 368--368
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 385--385
 [][]  
  []
 
-[12
+[13
 
 ]
 File: fig/a0_figure_ann_for_clt_architecture.png Graphic file (type bmp)
@@ -1788,11 +1800,11 @@ File: fig/a0_figure_ann_for_clt_architecture.png Graphic file (type bmp)
 File: kit_logo.png Graphic file (type bmp)
 <kit_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 397--397
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 414--414
 [][]  
  []
 
-[13
+[14
 
 ] (./fig/part3/fig/experiment_architecture_example1_code.tex)
 (./fig/part3/fig/experiment_architecture_example1_table-one-example.tex
@@ -1808,15 +1820,15 @@ Package fontspec Warning: \addfontfeature(s) ignored on line 5; it cannot be
 File: kit_logo.png Graphic file (type bmp)
 <kit_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 426--426
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 443--443
 [][]  
  []
 
 
-Overfull \vbox (20.53992pt too high) detected at line 426
+Overfull \vbox (20.53992pt too high) detected at line 443
  []
 
-[14
+[15
 
 ]
 File: fig/part3/interitance.png Graphic file (type bmp)
@@ -1824,15 +1836,15 @@ File: fig/part3/interitance.png Graphic file (type bmp)
 File: kit_logo.png Graphic file (type bmp)
 <kit_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 440--440
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 457--457
 [][]  
  []
 
 
-Overfull \vbox (20.78351pt too high) detected at line 440
+Overfull \vbox (20.78351pt too high) detected at line 457
  []
 
-[15
+[16
 
 ] (./fig/part3/tab/result_ann_valuation.tex
 
@@ -1847,21 +1859,44 @@ Package fontspec Warning: \addfontfeature(s) ignored on line 14; it cannot be
 File: kit_logo.png Graphic file (type bmp)
 <kit_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 471--471
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 488--488
 [][]  
  []
 
-[16
+[17
 
 ]
 File: kit_logo.png Graphic file (type bmp)
 <kit_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 499--499
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 511--511
 [][]  
  []
 
-[17
+
+Overfull \vbox (35.01747pt too high) detected at line 511
+ []
+
+[18
+
+]
+File: kit.png Graphic file (type bmp)
+<kit.png>
+File: last_logo.png Graphic file (type bmp)
+<last_logo.png>
+
+Overfull \hbox (113.81102pt too wide) in paragraph at lines 540--540
+[][]  
+ []
+
+File: kit_logo.png Graphic file (type bmp)
+<kit_logo.png>
+
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 540--540
+[][]  
+ []
+
+[19
 
 ]
 \tf@nav=\write6
@@ -1878,12 +1913,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 34621 strings out of 476919
- 738440 string characters out of 5821840
- 1293371 words of memory out of 5000000
- 53845 multiletter control sequences out of 15000+600000
+ 34650 strings out of 476919
+ 738856 string characters out of 5821840
+ 1292563 words of memory out of 5000000
+ 53872 multiletter control sequences out of 15000+600000
  410892 words of font info for 88 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  131i,14n,132p,1827b,1281s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (17 pages).
+Output written on main.pdf (19 pages).
