@@ -29,7 +29,7 @@
 \titlegraphic { 
 \begin{tikzpicture}[overlay,remember picture]
 \node[left=0.0cm] at (current page.28){
-    \includegraphics[width=2.8cm]{wuhan.png}
+    \includegraphics[width=3.5cm]{./wuxi.png}
 };
 \node[left=-4cm] at (current page.151){
     \includegraphics[width=3.5cm]{kit.png}
@@ -40,7 +40,7 @@
 \usepackage{textpos}
 \addtobeamertemplate{frametitle}{}{
 	\begin{textblock*}{15mm}(0.86\textwidth,-1.1cm)
-		\includegraphics[width=2.5cm]{kit_logo.png}
+		\includegraphics[width=2.5cm]{./kit_wuxi_logo.png}
 	\end{textblock*}
 	}	
 
@@ -298,8 +298,11 @@ find possible solutions. In the proper group, they are  the individual that we w
 
 
 \begin{frame}{自适应变异算子}
-		$\text{md} = [CT_1, \cdots, CT_{n-1}, CT_n] -  [ICV_1, \cdots, ICV_{n-1},
-		ICV_n]$ \\
+	\begin{equation}
+		\text{md} = [CT_1, \cdots, CT_{n-1}, CT_n] -  [ICV_1, \cdots, ICV_{n-1},
+		ICV_n] 
+	\end{equation}
+		\\
 		\begin{itemize}
 			\item  md 表示变异向量 
 			\item  $CT_i$ 表示第i个约束条件，比如质量，强度等。
@@ -517,7 +520,7 @@ neurons in the hidden layer are fully connected with the inputs.
 \end{textblock*}
 
 \begin{textblock*}{2cm}(5.8cm,-1.9cm) % {block width} (coords)
-	\includegraphics[width=6.0cm]{last_logo.png}
+	\includegraphics[width=6.0cm]{./last_wuxi_logo.png}
 \end{textblock*}
 
 	\begin{tikzpicture}
@@ -534,7 +537,10 @@ neurons in the hidden layer are fully connected with the inputs.
 			\draw[blue,dashed] (6,4.5) -- (8,6.5);
 			\draw[blue,dashed] (8,6.5) -- (9,5.5);
 			\draw[blue,dashed] (9,5.5) -- (11,8.5);
-		\node at (8,6) {\textcolor{blue}{\Huge{谢谢}}};
+		\node at (8,6) {\textcolor{blue}{\Huge{请各位老师批评指正
+			}} };
+		\node at (8,4) {\textcolor{blue}{\Huge{邮箱:
+			zhanghuiyao2357@163.com}} };
 		\end{scope}
 	\end{tikzpicture}
 \end{frame}

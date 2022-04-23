@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.3.27)  22 APR 2022 21:28
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.3.27)  23 APR 2022 19:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1606,8 +1606,8 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
  (./main.nav)
-File: wuhan.png Graphic file (type bmp)
-<wuhan.png>
+File: ./wuxi.png Graphic file (type bmp)
+<./wuxi.png>
 File: kit.png Graphic file (type bmp)
 <kit.png>
 
@@ -1640,8 +1640,8 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
 (Font)              Font shape `TU/lmss/m/sl' tried instead on input line 80.
 File: book.png Graphic file (type bmp)
 <book.png>
-File: kit_logo.png Graphic file (type bmp)
-<kit_logo.png>
+File: ./kit_wuxi_logo.png Graphic file (type bmp)
+<./kit_wuxi_logo.png>
 
 Overfull \hbox (28.45276pt too wide) in paragraph at lines 80--80
 [][]  
@@ -1650,8 +1650,8 @@ Overfull \hbox (28.45276pt too wide) in paragraph at lines 80--80
 [2
 
 ]
-File: kit_logo.png Graphic file (type bmp)
-<kit_logo.png>
+File: ./kit_wuxi_logo.png Graphic file (type bmp)
+<./kit_wuxi_logo.png>
 
 Overfull \hbox (28.45276pt too wide) in paragraph at lines 99--99
 [][]  
@@ -1669,8 +1669,8 @@ Overfull \hbox (5.60594pt too wide) in paragraph at lines 124--124
 \TU/lmss/m/n/10 (https://www.thegillcorp.com)|  
  []
 
-File: kit_logo.png Graphic file (type bmp)
-<kit_logo.png>
+File: ./kit_wuxi_logo.png Graphic file (type bmp)
+<./kit_wuxi_logo.png>
 
 Overfull \hbox (28.45276pt too wide) in paragraph at lines 124--124
 [][]  
@@ -1687,8 +1687,8 @@ File: fig/part0/Schematic_of_a_laminate.png Graphic file (type bmp)
 <fig/part0/Schematic_of_a_laminate.png>
 File: fig/local.png Graphic file (type bmp)
 <fig/local.png>
-File: kit_logo.png Graphic file (type bmp)
-<kit_logo.png>
+File: ./kit_wuxi_logo.png Graphic file (type bmp)
+<./kit_wuxi_logo.png>
 
 Overfull \hbox (28.45276pt too wide) in paragraph at lines 161--161
 [][]  
@@ -1697,8 +1697,8 @@ Overfull \hbox (28.45276pt too wide) in paragraph at lines 161--161
 [5
 
 ]
-File: kit_logo.png Graphic file (type bmp)
-<kit_logo.png>
+File: ./kit_wuxi_logo.png Graphic file (type bmp)
+<./kit_wuxi_logo.png>
 
 Overfull \hbox (28.45276pt too wide) in paragraph at lines 188--188
 [][]  
@@ -1710,8 +1710,8 @@ Overfull \hbox (28.45276pt too wide) in paragraph at lines 188--188
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <12> not available
 (Font)              Font shape `TU/lmss/m/sl' tried instead on input line 222.
  (./fig/chapter3_OGAM.tex)
-File: kit_logo.png Graphic file (type bmp)
-<kit_logo.png>
+File: ./kit_wuxi_logo.png Graphic file (type bmp)
+<./kit_wuxi_logo.png>
 
 Overfull \hbox (28.45276pt too wide) in paragraph at lines 222--222
 [][]  
@@ -1729,8 +1729,8 @@ Overfull \hbox (2.66554pt too wide) in paragraph at lines 67--68
  []
 
 )
-File: kit_logo.png Graphic file (type bmp)
-<kit_logo.png>
+File: ./kit_wuxi_logo.png Graphic file (type bmp)
+<./kit_wuxi_logo.png>
 
 Overfull \hbox (28.45276pt too wide) in paragraph at lines 260--260
 [][]  
@@ -1743,8 +1743,8 @@ Overfull \vbox (40.50871pt too high) detected at line 260
 [8
 
 ]
-File: kit_logo.png Graphic file (type bmp)
-<kit_logo.png>
+File: ./kit_wuxi_logo.png Graphic file (type bmp)
+<./kit_wuxi_logo.png>
 
 Overfull \hbox (28.45276pt too wide) in paragraph at lines 288--288
 [][]  
@@ -1753,20 +1753,20 @@ Overfull \hbox (28.45276pt too wide) in paragraph at lines 288--288
 [9
 
 ]
-File: kit_logo.png Graphic file (type bmp)
-<kit_logo.png>
+File: ./kit_wuxi_logo.png Graphic file (type bmp)
+<./kit_wuxi_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 327--327
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 330--330
 [][]  
  []
 
 [10
 
 ]
-File: kit_logo.png Graphic file (type bmp)
-<kit_logo.png>
+File: ./kit_wuxi_logo.png Graphic file (type bmp)
+<./kit_wuxi_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 347--347
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 350--350
 [][]  
  []
 
@@ -1775,20 +1775,20 @@ Overfull \hbox (28.45276pt too wide) in paragraph at lines 347--347
 ]
 File: fig/part3/formula_for_stenght_calculation.png Graphic file (type bmp)
 <fig/part3/formula_for_stenght_calculation.png>
-File: kit_logo.png Graphic file (type bmp)
-<kit_logo.png>
+File: ./kit_wuxi_logo.png Graphic file (type bmp)
+<./kit_wuxi_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 363--363
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 366--366
 [][]  
  []
 
 [12
 
 ] (./fig/chapter5_neural_network.tex)
-File: kit_logo.png Graphic file (type bmp)
-<kit_logo.png>
+File: ./kit_wuxi_logo.png Graphic file (type bmp)
+<./kit_wuxi_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 385--385
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 388--388
 [][]  
  []
 
@@ -1797,10 +1797,10 @@ Overfull \hbox (28.45276pt too wide) in paragraph at lines 385--385
 ]
 File: fig/a0_figure_ann_for_clt_architecture.png Graphic file (type bmp)
 <fig/a0_figure_ann_for_clt_architecture.png>
-File: kit_logo.png Graphic file (type bmp)
-<kit_logo.png>
+File: ./kit_wuxi_logo.png Graphic file (type bmp)
+<./kit_wuxi_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 414--414
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 417--417
 [][]  
  []
 
@@ -1817,15 +1817,15 @@ Package fontspec Warning: \addfontfeature(s) ignored on line 5; it cannot be
 (fontspec)                  The requested feature is "Numbers={Monospaced}". 
 
 )
-File: kit_logo.png Graphic file (type bmp)
-<kit_logo.png>
+File: ./kit_wuxi_logo.png Graphic file (type bmp)
+<./kit_wuxi_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 443--443
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 446--446
 [][]  
  []
 
 
-Overfull \vbox (20.53992pt too high) detected at line 443
+Overfull \vbox (20.53992pt too high) detected at line 446
  []
 
 [15
@@ -1833,15 +1833,15 @@ Overfull \vbox (20.53992pt too high) detected at line 443
 ]
 File: fig/part3/interitance.png Graphic file (type bmp)
 <fig/part3/interitance.png>
-File: kit_logo.png Graphic file (type bmp)
-<kit_logo.png>
+File: ./kit_wuxi_logo.png Graphic file (type bmp)
+<./kit_wuxi_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 457--457
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 460--460
 [][]  
  []
 
 
-Overfull \vbox (20.78351pt too high) detected at line 457
+Overfull \vbox (20.78351pt too high) detected at line 460
  []
 
 [16
@@ -1856,25 +1856,25 @@ Package fontspec Warning: \addfontfeature(s) ignored on line 14; it cannot be
 (fontspec)                  The requested feature is "Numbers={Monospaced}". 
 
 )
-File: kit_logo.png Graphic file (type bmp)
-<kit_logo.png>
+File: ./kit_wuxi_logo.png Graphic file (type bmp)
+<./kit_wuxi_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 488--488
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 491--491
 [][]  
  []
 
 [17
 
 ]
-File: kit_logo.png Graphic file (type bmp)
-<kit_logo.png>
+File: ./kit_wuxi_logo.png Graphic file (type bmp)
+<./kit_wuxi_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 511--511
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 514--514
 [][]  
  []
 
 
-Overfull \vbox (35.01747pt too high) detected at line 511
+Overfull \vbox (35.01747pt too high) detected at line 514
  []
 
 [18
@@ -1882,17 +1882,22 @@ Overfull \vbox (35.01747pt too high) detected at line 511
 ]
 File: kit.png Graphic file (type bmp)
 <kit.png>
-File: last_logo.png Graphic file (type bmp)
-<last_logo.png>
+File: ./last_wuxi_logo.png Graphic file (type bmp)
+<./last_wuxi_logo.png>
 
-Overfull \hbox (113.81102pt too wide) in paragraph at lines 540--540
+Overfull \hbox (113.81102pt too wide) in paragraph at lines 546--546
 [][]  
  []
 
-File: kit_logo.png Graphic file (type bmp)
-<kit_logo.png>
 
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 540--540
+Overfull \hbox (32.78212pt too wide) in paragraph at lines 546--546
+[][]  
+ []
+
+File: ./kit_wuxi_logo.png Graphic file (type bmp)
+<./kit_wuxi_logo.png>
+
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 546--546
 [][]  
  []
 
@@ -1914,8 +1919,8 @@ Package rerunfilecheck Info: File `main.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  34650 strings out of 476919
- 738856 string characters out of 5821840
- 1292563 words of memory out of 5000000
+ 738940 string characters out of 5821840
+ 1292578 words of memory out of 5000000
  53872 multiletter control sequences out of 15000+600000
  410892 words of font info for 88 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
